@@ -2,9 +2,10 @@ namespace MovHubDb.Model
 {
     public class MovieSearchItem
     {
-        public int id;
-        public string title;
-        public float vote_average;
-        public string release_date;
+        [HtmlAs("<td><a href=http://localhost:3000/movies/{value}>{value}</a></td>")]
+        public int Id { get; set; }
+        public string Original_Title { get; set; }
+        public string Release_Date { get; set; }
+        public float Vote_Average { get; set; }
     }
 }

@@ -2,6 +2,6 @@ namespace MovHubDb.Model
 {
     public class Credits
     {
-        public CreditsItem[] cast;
+        public CreditsItem[] Cast { get; set; }
     }
 }
