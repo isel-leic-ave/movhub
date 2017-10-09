@@ -10,9 +10,12 @@ namespace MovHubDb.Model
         public string Credits { get { return Id.ToString(); } }
         public int Budget { get; set; }
         public float Vote_Average { get; set; }
+        [HtmlAs("\t<div style=\"position:absolute; top:0; right:0;\"><img width=\"75%\" src=\"http://image.tmdb.org/t/p/w185/{value}\"></div>")]
+        public string Poster_Path { get; set; }
         public double Popularity { get; set; }
         public string Release_Date { get; set; }
         [HtmlAs("\t<div class='card-body bg-light'><div><strong>{name}</strong>:</div>{value}</div>")]
         public string Overview { get; set; }
+       
     }
 }

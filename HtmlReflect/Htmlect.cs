@@ -60,7 +60,7 @@ namespace HtmlReflect
                             .Replace("{value}", info.GetValue(o).ToString());
                         continue;
                     }
-                    r += "<th>"+ info.GetValue(o)+"</th>";
+                    r += "<td>"+ info.GetValue(o)+"</td>";
                 }
                 r += "</tr>\n";
             }
