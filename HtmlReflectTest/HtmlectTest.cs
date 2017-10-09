@@ -13,7 +13,7 @@ namespace HtmlReflectTest
         public void ToHtmlArrayTest()
         {
             Htmlect s = new Htmlect();
-            string r =s.ToHtml(a.MovieDetails(1018));
+            string r =s.ToHtml(a.PersonDetais(85));
             Console.WriteLine(r);
         }
 
@@ -42,7 +42,7 @@ namespace HtmlReflectTest
         [TestMethod]
         public void PersonCredits()
         {
-            a.PersonDetais(15008);
+            a.PersonDetais(85);
 
         }
         [TestMethod]

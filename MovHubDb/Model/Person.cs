@@ -12,6 +12,8 @@
         public string Profile_Path { get; set; }
         public double Popularity { get; set; }
         public string Place_Of_Birth { get; set; }
+        [HtmlAs("<li class='list-group-item'><strong>{name}</strong>:&nbsp<a href={value}>{value}</a></li>")]
+        public string Homepage { get; set; }
         
     }
 }

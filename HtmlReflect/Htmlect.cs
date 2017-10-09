@@ -20,7 +20,7 @@ namespace HtmlReflect
                 var c = property.GetCustomAttribute<HtmlAsAttribute>();
                 if (c != null)
                 {
-                    r += c.Val.Replace("{name}",property.Name.Replace("_",String.Empty)).Replace("{value}",property.GetValue(obj).ToString())+"\n";
+                    r += c.Val.Replace("{name}",property.Name.Replace("_",String.Empty)).Replace("{value}",property.GetValue(obj)?.ToString())+"\n";
                     continue;
                 }
 
