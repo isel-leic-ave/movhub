@@ -6,7 +6,7 @@ namespace MovHubDb.Model
         public int Id { get; set; }
         public string Original_Title { get; set; }
         public string Tagline { get; set; }
-        [HtmlAs("\t<li class='list-group-item'><a href = '/movies/{value}/credits' > Cast and crew</a></li>")]
+        [HtmlAs("\t<li class='list-group-item'><a href = '/movies/{value}/credits' > Cast</a></li>")]
         public string Credits { get { return Id.ToString(); } }
         public int Budget { get; set; }
         public float Vote_Average { get; set; }

@@ -12,9 +12,16 @@ namespace HtmlReflectTest
         [TestMethod]
         public void ToHtmlArrayTest()
         {
-            Htmlect s = new Htmlect();
-            string r =s.ToHtml(a.PersonDetais(85));
+            Htmlect html = new Htmlect();
+            string r =html.ToHtml(a.Search("Deadpool",1));
             Console.WriteLine(r);
+        }
+
+        [TestMethod]
+        public void ToHtmlTest()
+        {
+            Htmlect html = new Htmlect();
+            string r = html.ToHtml(a.MovieDetails(58));
         }
 
         [TestMethod]
@@ -48,7 +55,7 @@ namespace HtmlReflectTest
         [TestMethod]
         public void PersonMovies()
         {
-            a.PersonMovies(15008);
+            a.PersonMovies(85);
         }
     }
 }

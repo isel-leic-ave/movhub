@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using MovHubDb.Model;
 
@@ -8,9 +9,15 @@ namespace HtmlReflect
     {
         private string singleObjPredicate = "\t<li class='list-group-item'><strong>";
 
+        private Dictionary<object,string> cache = new Dictionary<object, string>();
 
         public string ToHtml(object obj)
         {
+
+            if (cache.ContainsKey(obj))
+            {
+                return cache[obj];
+            }
             string r = "<ul class='list-group'>\n";
             PropertyInfo[] val = obj.GetType().GetProperties();
             foreach (var property in val)
@@ -29,11 +36,13 @@ namespace HtmlReflect
                 
                 
             }
+            cache.Add(obj,r+"</ul>");
             return r+"</ul>";
         }
 
         public string ToHtml(object[] arr)
         {
+            if (cache.ContainsKey(arr)) return cache[arr];
             string r = "<table class='table table-hover'>\n\t<thead>\n\t\t<tr>";
             PropertyInfo[] A = arr[0].GetType().GetProperties();
             foreach (var info in A)
@@ -64,6 +73,7 @@ namespace HtmlReflect
                 }
                 r += "</tr>\n";
             }
+            cache.Add(arr, r + "\t</tbody>\n</table>");
             return r+"\t</tbody>\n</table>";
         }
     }
