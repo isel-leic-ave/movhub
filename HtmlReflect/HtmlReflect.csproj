@@ -43,5 +43,11 @@
     <Compile Include="Htmlect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovHubDb\MovHubDb.csproj">
+      <Project>{902751b9-ddb8-4e09-849c-023d130aa636}</Project>
+      <Name>MovHubDb</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
